@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <center>
+                <h1>Get in touch</h1>
+            </center>
+            <input type="text" id="name" placeholder="Your name" required>
+            <input type="email" id="email" placeholder="Your email" required>
+            <textarea name="message" id="message" rows="4" placeholder="Your message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "YourMailAddress",
+                Password:  'YourAppPassword',
+                To: 'hasibul15-11057@diu.edu.bd',
+                From: document.getElementById("email").value,
+                Subject: "Message from website",
+                Body: "Name: " + document.getElementById("name").value
+                    + "<br> Email: " + document.getElementById("email").value
+                    + "<br> Message: " + document.getElementById("message").value
+            }).then(
+                message => alert("Message sent successfully!")
+            );
+        }
+    </script>
+</body>
+
+</html>

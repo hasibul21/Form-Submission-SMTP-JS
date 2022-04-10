@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, #8d00bb 0%, #000dc0 100%);
+    color: white;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(42, 42, 42);
+    height: auto;
+    width: 40%;
+    padding: 30px;
+}
+form input, form textarea{
+    margin: 10px;
+    padding: 20px;
+    background-color: rgb(53, 53, 53);
+    border: none;
+    outline: none;
+    color: white;
+}
+form button{
+    background-color: aqua;
+    color: black;
+    font-size: large;
+    width: 120px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
